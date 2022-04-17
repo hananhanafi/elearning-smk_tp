@@ -1,0 +1,11 @@
+Hak Akses Admin http://localhost/eLearning/welcome/admin
+username : admin@gmail.com
+password : admin
+
+Hak Akses Guru http://localhost/eLearning/welcome/guru
+username : rajaputramedia@gmail.com
+password : guru123
+
+Hak Akses Siswa http://localhost/eLearning/welcome
+username : rajaputramedia@gmail.com
+password : siswa123
