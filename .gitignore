@@ -6,8 +6,6 @@ application/cache/*
 application/logs/*
 !application/logs/index.html
 
-composer.lock
-
 user_guide_src/build/*
 user_guide_src/cilexer/build/*
 user_guide_src/cilexer/dist/*
