@@ -116,8 +116,8 @@
                     </div>
                     <div class="col-sm-4 mb-2 d-flex justify-content-center" data-aos-duration="1900" data-aos="fade-left">
                         <a class="w-100" data-target="#ModalQuiz">
-                            <div class="card-kelas card h-100">
-                                <h1 class="my-auto">
+                            <div class="card-kelas card h-100" style="border-radius:2px!important">
+                                <h1 class="my-auto text-primary">
                                     Quiz
                                 </h1>
                             </div>

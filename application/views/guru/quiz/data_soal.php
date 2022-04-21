@@ -74,6 +74,9 @@
     <link rel="shortcut icon" href="<?= base_url('assets') ?>/img/favicon.png" />
     <!-- Library -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.4/dist/sweetalert2.all.min.js"></script>
+    
+    <!-- General JS Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 
 <!-- end::Head -->
@@ -270,11 +273,11 @@
                             <div class="card-body">
                                 
                                 <a href="<?php echo site_url('quiz/data_quiz/'); ?>" class="btn btn-primary">Kembali</a>
+                                <a href="<?php echo site_url('quiz/add_soal/' . $quiz->id); ?>" class="btn btn-success">Tambah Soal</a>
                                 <hr>
                                 <h2 class="card-title" style="color: black;">Daftar Soal <?=$quiz->nama_quiz?></h2>
                                 <hr>
                                 <!-- <a href="<?= base_url('quiz/add_soal') ?>" class="btn btn-success">Tambah Soal</a> -->
-                                <a href="<?php echo site_url('quiz/add_soal/' . $quiz->id); ?>" class="btn btn-success">Tambah Soal</a>
                             </div>
                         </div>
                         <div class="row">
@@ -317,7 +320,7 @@
 
                                                         <td class="text-center">
                                                             <a href="<?php echo site_url('quiz/update_soal/' . $quiz->id . '/' . $u->id); ?>" class="btn btn-info">Update Soal</a>
-                                                            <a href="<?php echo site_url('quiz/delete_soal/' . $quiz->id . '/' . $u->id); ?>" class="btn btn-danger remove">Hapus Soal</a>
+                                                            <button id="delete-soal" data-quiz-id="<?=$quiz->id?>" data-soal-id="<?=$u->id?>" class="btn btn-danger remove">Hapus Soal</button>
                                                         </td>
 
                                                     </tr>
@@ -394,6 +397,27 @@
 
     <!-- begin::Global Config(global config for global JS sciprts) -->
     <script>
+        $("button#delete-soal").click(function() {
+            Swal.fire({
+                title: 'Yakin ingin menghapus soal ini?',
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: 'Iya',
+                denyButtonText: `Tidak`,
+            }).then((result) => {
+                console.log("res",result)
+                console.log("data",$(this).attr("data-id"))
+                /* Read more about isConfirmed, isDenied below */
+                if (result.value) {
+                    const dataQuizID = $(this).attr("data-quiz-id");
+                    const dataSoalID = $(this).attr("data-soal-id");
+                    window.location.href = '../../quiz/delete_soal/'+dataQuizID+'/'+dataSoalID;
+                } else if (result.dismiss) {
+                    // Swal.fire('Changes are not saved', '', 'info')
+                    // console.log("data",$(this).attr("data-id"))
+                }
+            })
+        })
         var KTAppOptions = {
             "colors": {
                 "state": {

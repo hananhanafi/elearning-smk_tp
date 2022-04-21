@@ -283,7 +283,7 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <label for="token_quiz">Token Quiz</label>
-                                                <input required readonly type="text" name="token_quiz" class="form-control" id="nama_quiz" placeholder="Masukkan Nama Quiz" value="<?=$quiz->token?>">
+                                                <input required readonly type="text" name="token_quiz" class="form-control disabled" id="nama_quiz" placeholder="Masukkan Nama Quiz" value="<?=$quiz->token?>">
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -295,7 +295,7 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <label for="jumlah_soal">Jumlah Soal</label>
-                                                <input required type="number" name="jumlah_soal" class="form-control" id="jumlah_soal" placeholder="Masukkan Jumlah Soal" value="<?=$quiz->jumlah_soal?>">
+                                                <input required disabled type="number" name="jumlah_soal" class="form-control disabled" id="jumlah_soal" placeholder="Masukkan Jumlah Soal" value="<?=$quiz->jumlah_soal?>">
                                             </div>
                                         </div>
                                         <div class="form-group">

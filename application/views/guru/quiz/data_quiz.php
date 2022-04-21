@@ -75,6 +75,9 @@
     
     <!-- Library -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.4/dist/sweetalert2.all.min.js"></script>
+
+    <!-- General JS Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 
 <!-- end::Head -->
@@ -312,7 +315,7 @@
                                                             <a href="<?php echo site_url('quiz/update_quiz/' . $u->id); ?>" class="btn btn-info">Update ⭢</a>
                                                             <a href="<?php echo site_url('quiz/daftar_soal/' . $u->id); ?>" class="btn btn-primary">Daftar Soal</a>
 
-                                                            <a href="<?php echo site_url('quiz/delete_quiz/' . $u->id); ?>" class="btn btn-danger remove">Delete ✖</a>
+                                                            <button id="delete-quiz" data-id="<?=$u->id?>" class="btn btn-danger remove">Delete ✖</button>
                                                         </td>
 
                                                     </tr>
@@ -363,17 +366,17 @@
         </script>
     <?php endif; ?>
 
-<?php if ($this->session->flashdata('success-edit')) : ?>
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: 'Berhasil!',
-            text: 'Berhasil memperbarui quiz.',
-            showConfirmButton: false,
-            timer: 2500
-        })
-    </script>
-<?php endif; ?>
+    <?php if ($this->session->flashdata('success-edit')) : ?>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: 'Berhasil memperbarui quiz.',
+                showConfirmButton: false,
+                timer: 2500
+            })
+        </script>
+    <?php endif; ?>
 
 <?php if ($this->session->flashdata('success-delete')) : ?>
     <script>
@@ -389,6 +392,26 @@
 
     <!-- begin::Global Config(global config for global JS sciprts) -->
     <script>
+        $("button#delete-quiz").click(function() {
+            Swal.fire({
+                title: 'Yakin ingin menghapus quiz ini?',
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: 'Iya',
+                denyButtonText: `Tidak`,
+            }).then((result) => {
+                console.log("res",result)
+                console.log("data",$(this).attr("data-id"))
+                /* Read more about isConfirmed, isDenied below */
+                if (result.value) {
+                    const dataID = $(this).attr("data-id");
+                    window.location.href = '../quiz/delete_quiz/'+dataID;
+                } else if (result.dismiss) {
+                    // Swal.fire('Changes are not saved', '', 'info')
+                    // console.log("data",$(this).attr("data-id"))
+                }
+            })
+        })
         var KTAppOptions = {
             "colors": {
                 "state": {

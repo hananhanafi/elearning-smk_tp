@@ -71,7 +71,8 @@
     <!--begin::Layout Skins(used by all pages) -->
 
     <!--end::Layout Skins -->
-    <link rel="shortcut icon" href="<?= base_url('assets') ?>/img/favicon.png" />
+    <link rel="shortcut icon" href="<?= base_url('assets') ?>/img/favicon.png" /><!-- General JS Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 
 <!-- end::Head -->
@@ -284,7 +285,10 @@
                                             <textarea class="form-control" required name="question" id="question" rows="3" placeholder="Masukkan Soal"></textarea>
                                         </div><div class="form-group">
                                             <label for="question">File/Gambar Soal (opsional)</label>
-                                            <input type="file" accept="image/*" name="question_img" class="form-control">
+                                            <input type="file" accept="image/*" name="question_img" class="form-control" onchange="loadFile(event)">
+                                            <div>
+                                                <img id="question_img" class="img-fluid border" style="max-width:600px;max-height:400px" src="<?= base_url('assets/') ?>profile_picture/default.jpg?>" alt="" />
+                                            </div>
                                         </div>
                                         
                                         <div class="form-group">
@@ -342,6 +346,13 @@
 
     <!-- begin::Global Config(global config for global JS sciprts) -->
     <script>
+        var loadFile = function(event) {
+            var output = document.getElementById('question_img');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.onload = function() {
+                URL.revokeObjectURL(output.src) // free memory
+            }
+        };
         var KTAppOptions = {
             "colors": {
                 "state": {
