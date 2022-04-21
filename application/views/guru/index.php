@@ -131,12 +131,12 @@
                                         </li>
                                         <li class="kt-menu__item " aria-haspopup="true"><a href="<?= base_url('guru/add_materi') ?>" class="kt-menu__link "><i class="kt-menu__link-icon la la-commenting"></i><span class="kt-menu__link-text">Materi</span></a></li>
 
-                                        <li class="kt-menu__item " aria-haspopup="true"><a href="<?= base_url('guru/add_quiz') ?>" class="kt-menu__link "><i class="kt-menu__link-icon la la-commenting"></i><span class="kt-menu__link-text">Quiz</span></a></li>
+                                        <li class="kt-menu__item " aria-haspopup="true"><a href="<?= base_url('quiz/data_quiz') ?>" class="kt-menu__link "><i class="kt-menu__link-icon la la-commenting"></i><span class="kt-menu__link-text">Quiz</span></a></li>
 
-                                        <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">Hasil</span></span>
+                                        <!-- <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">Hasil</span></span>
                                         </li>
 
-                                        <li class="kt-menu__item " aria-haspopup="true"><a href="<?= base_url('guru/hasil_quiz') ?>" class="kt-menu__link "><i class="kt-menu__link-icon la la-commenting"></i><span class="kt-menu__link-text">Quiz</span></a></li>
+                                        <li class="kt-menu__item " aria-haspopup="true"><a href="<?= base_url('quiz/data_quiz') ?>" class="kt-menu__link "><i class="kt-menu__link-icon la la-commenting"></i><span class="kt-menu__link-text">Quiz</span></a></li> -->
                                     </ul>
                                 </div>
                             </li>

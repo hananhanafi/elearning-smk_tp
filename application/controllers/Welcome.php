@@ -51,6 +51,7 @@ class Welcome extends CI_Controller
                 //cek password
                 if (password_verify($password, $user['password'])) {
                     $data = [
+                        'id' => $user['id'],
                         'email' => $user['email'],
                     ];
 
@@ -202,6 +203,7 @@ class Welcome extends CI_Controller
             if (password_verify($password, $user['password'])) {
                 $data = [
 
+                    'nip' => $user['nip'],
                     'email' => $user['email'],
                     'nama_guru' => $user['nama_guru'],
 

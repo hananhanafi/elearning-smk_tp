@@ -21,6 +21,86 @@ class User extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    public function quiz()
+    {
+
+        $data['user'] = $this->db->get_where('siswa', ['email' =>
+        $this->session->userdata('email')])->row_array();
+        
+        $token = $this->input->post('token');
+        $this->load->model('m_quiz');
+        $quiz = $this->m_quiz->detail_quiz_by_token($token);
+
+        if($quiz==NULL){
+            $this->session->set_flashdata('quiz-notfound', 'gagal');
+            $this->load->view('user/index');
+            $this->load->view('template/footer');
+            return;
+        }
+
+        $data['quiz'] = $quiz;
+        
+        $this->load->model('m_question');
+        $questions = $this->m_question->get_question_by_quiz_id($quiz->id)->result();
+        $data['questions'] = $questions;
+        $countQuestions = count($questions);
+
+        if($countQuestions>0){
+            $this->load->view('user/quiz', $data);
+            $this->load->view('template/footer');
+        }else{
+            $this->load->view('user/index');
+            $this->load->view('template/footer');
+        }
+    }
+    
+    public function submit_quiz()
+    {
+        $this->load->model('m_question');
+        $user_id = $this->session->userdata('id');
+        $quiz_id = $this->input->post('quiz_id');
+        $ids = $this->input->post('ids');
+
+        $totalQuestion = count($ids);
+        $totalRightAnswer = 0;
+
+        foreach($ids as $id){
+            $answer_key = $this->input->post('answer_key_'.$id);
+            $response = $this->input->post('response_'.$id);
+
+            $isResponseRight = false;
+            if($response == $answer_key){
+                $isResponseRight = true;
+                $totalRightAnswer++;
+            }
+                
+            $data = array(
+                'siswa_id' => $user_id,
+                'quiz_id' => $quiz_id,
+                'question_id' => $id,
+                'response' => $response,
+                'point' => $isResponseRight
+            );
+            
+            $this->db->insert('siswa_quiz_responses', $data);
+        }
+
+        $result = ($totalRightAnswer/$totalQuestion)*100;
+
+        // input quiz result
+        $data = array(
+            'siswa_id' => $user_id,
+            'quiz_id' => $quiz_id,
+            'jumlah_soal' => $totalQuestion,
+            'jumlah_benar' => $totalRightAnswer,
+            'result' => $result
+        );
+        $this->db->insert('siswa_quiz', $data);
+
+        $this->session->set_flashdata('success-submit_quiz', 'berhasil');
+        $this->load->view('user/index');
+        $this->load->view('template/footer');
+    }
 
     public function kelasfotografi()
     {
