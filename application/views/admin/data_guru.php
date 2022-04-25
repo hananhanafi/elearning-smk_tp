@@ -208,7 +208,7 @@
     <!-- Start Footer -->
     <footer class="main-footer">
         <div class="text-center">
-            Copyright &copy; 2020 <div class="bullet"></div><a href="https://www.smktanjungpriok1.sch.id">SMK TANJUNG PRIOK 1</a>
+            Copyright &copy; 2022 <div class="bullet"></div><a href="https://www.smktanjungpriok1.sch.id">SMK TANJUNG PRIOK 1</a>
         </div>
     </footer>
     <!-- End Footer -->

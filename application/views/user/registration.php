@@ -70,7 +70,7 @@
             </div>
             <div class="container">
                 <div class="banner_content text-center">
-                    <h2>Pendaftaran Learnify</h2>
+                    <h2>Pendaftaran Siswa</h2>
                     <div class="page_link">
                         <a href="<?= base_url('welcome') ?>">Beranda</a>
                         <a href="<?= base_url('user/registration') ?>">Pendaftaran</a>
@@ -87,7 +87,7 @@
         <div class="row bg-registration p-3">
             <div class="col-md-12 text-center">
                 <p class="registration-title font-weight-bold display-4 mt-4" style="font-size: 50px;">
-                    Pendaftaran Learnify</p>
+                    Pendaftaran Siswa</p>
                 <p style="line-height:-30px;margin-top:-20px;">Silahkan isi data data yang diperlukan dibawah ini </p>
                 <hr>
             </div>

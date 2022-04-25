@@ -264,7 +264,7 @@
                                                         <tr>
                                                             <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                                                 <div style="font-family: 'Poppins', sans-serif !important;font-size:16px;font-weight:400;line-height:24px;text-align:left;color:#637381;">
-                                                                    Sebelum resmi menjadi siswa di website Learnify,
+                                                                    Sebelum resmi menjadi siswa di website,
                                                                     Kamu harus terlebih dahulu memverifikasi akun kamu.
                                                                     dengan begitu kami mengetahui kalau kamu bukan
                                                                     robot dan bisa belajar deh!</div>

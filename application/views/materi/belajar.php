@@ -82,7 +82,7 @@
                                                                         $data['user'] = $this->db->get_where('siswa', ['email' =>
                                                                         $this->session->userdata('email')])->row_array();
                                                                         echo $data['user']['nama'];
-                                                                        ?> - Learnify Students</h3>
+                                                                        ?>Students</h3>
                         <p><?= $detail->nama_mapel ?> - Kelas <?= $detail->kelas ?></p>
                         <hr align="left" width="600;">
                         <p style="line-height: 3px;">Kita akan mempelajari tentang</p>

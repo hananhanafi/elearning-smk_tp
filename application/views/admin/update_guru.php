@@ -175,7 +175,7 @@
     <!-- Start Footer -->
     <footer class="main-footer">
         <div class="text-center">
-            Copyright &copy; 2020 <div class="bullet"></div>
+            Copyright &copy; 2022 <div class="bullet"></div>
         </div>
     </footer>
     <!-- End Footer -->
