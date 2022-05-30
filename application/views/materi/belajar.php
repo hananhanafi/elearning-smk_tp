@@ -109,7 +109,7 @@
     </div>
     <!-- End Video Player -->
     <!-- Start Deskripsi Materi -->
-    <div class="container">
+    <!-- <div class="container">
         <div class="row mt-4">
             <div class="col-md-12 w-150 mb-4">
                 <div class="card materi border-0">
@@ -122,7 +122,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Deskripsi Materi -->
 
 

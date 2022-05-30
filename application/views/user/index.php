@@ -110,6 +110,7 @@
                     <div class="col-sm-4 mb-2 d-flex justify-content-center" data-aos-duration="1900" data-aos="fade-left">
                         <a href="<?= base_url('user/kelasfotografi') ?>">
                             <div class="card-kelas">
+                                <span style="position:absolute;bottom:-24px">Pelajaran</span>
                                 <img src="<?= base_url('assets/') ?>img/Fotografi.png" class="card-img-top" alt="...">
                             </div>
                         </a>
